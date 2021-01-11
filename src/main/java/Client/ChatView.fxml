@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.ChatController">
+    <top>
+        <BorderPane>
+            <left>
+                <Label fx:id="lNick" text="Чат" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+            </left>
+
+            <right>
+                <HBox>
+                    <Button onAction="#logoutButtonAction" prefWidth="100" text="Выйти">
+                        <HBox.margin>
+                            <Insets right="10.0" />
+                        </HBox.margin>
+                    </Button>
+                    <Button onAction="#deleteButtonAction" prefWidth="100" text="Удалить" />
+                </HBox>
+            </right>
+
+            <BorderPane.margin>
+                <Insets bottom="10.0" />
+            </BorderPane.margin>
+        </BorderPane>
+    </top>
+    <center>
+        <HBox>
+            <TextArea fx:id="taChat" editable="false" focusTraversable="false" wrapText="true" BorderPane.alignment="CENTER" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets right="10.0" />
+                </HBox.margin>
+            </TextArea>
+
+            <TextArea fx:id="taUserList" editable="false" minWidth="100" prefWidth="200" />
+
+            <BorderPane.margin>
+                <Insets bottom="10.0" />
+            </BorderPane.margin>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox>
+            <TextField fx:id="tfMessage" onAction="#sendButtonAction" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets right="10.0" />
+                </HBox.margin>
+            </TextField>
+            <Button onAction="#sendButtonAction" prefWidth="100" text="Отправить" />
+        </HBox>
+    </bottom>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+</BorderPane>
